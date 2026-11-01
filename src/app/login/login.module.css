@@ -1,0 +1,708 @@
+/* login.module.css */
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  background-color: var(--bg-light);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  color: var(--text-dark);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1.1fr 1.2fr;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem;
+  background-image: linear-gradient(135deg, rgba(74, 53, 37, 0.95) 0%, rgba(111, 78, 55, 0.85) 100%), url('/login-bg.png');
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.sidebar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(45, 106, 79, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(212, 163, 115, 0.2) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.sidebarContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logoIcon {
+  width: 2.25rem;
+  height: 2.25rem;
+  background: linear-gradient(135deg, var(--primary-green-light) 0%, var(--primary-green) 100%);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #ffffff;
+  box-shadow: 0 4px 12px var(--primary-green-glow-heavy);
+}
+
+.brandName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  background: linear-gradient(to right, #ffffff, var(--primary-green-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroTextSection {
+  margin-top: auto;
+  margin-bottom: auto;
+  max-width: 28rem;
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.025em;
+}
+
+.heroTitle span {
+  background: linear-gradient(to right, var(--primary-green-light), var(--accent-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroSubtitle {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+.sidebarFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
+
+.sidebarFooterLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.sidebarFooterLinks a {
+  transition: color 0.2s ease;
+}
+
+.sidebarFooterLinks a:hover {
+  color: #ffffff;
+}
+
+/* Form Panel Styling */
+.formPanel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background-color: #ffffff;
+}
+
+.formCard {
+  width: 100%;
+  max-width: 26rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.formHeader {
+  margin-bottom: 2.25rem;
+}
+
+.formTitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.5rem;
+}
+
+.formSubtitle {
+  font-size: 0.95rem;
+  color: #64748b;
+}
+
+.formSubtitle a {
+  color: var(--primary-green);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.formSubtitle a:hover {
+  color: var(--primary-green-dark);
+  text-decoration: underline;
+}
+
+.oauthGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.oauthButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.625rem;
+  background-color: #ffffff;
+  color: #334155;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.oauthButton:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.oauthButton:active {
+  transform: translateY(0);
+}
+
+.oauthIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1.75rem;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.divider::before {
+  margin-right: 1rem;
+}
+
+.divider::after {
+  margin-left: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  padding-right: 3rem;
+  /* Space for pass-toggle or icons */
+  font-size: 0.95rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.625rem;
+  background-color: #ffffff;
+  color: #0f172a;
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 4px var(--primary-green-glow);
+}
+
+/* Floating Label Animation styling */
+.label {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.95rem;
+  color: #64748b;
+  pointer-events: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: transparent;
+  padding: 0 0.25rem;
+}
+
+/* Float label to top if input is focused, or has value/placeholder shown */
+.input:focus~.label,
+.inputNotHtmlEmpty~.label {
+  top: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary-green);
+  background-color: #ffffff;
+}
+
+.input:focus {
+  background-color: #ffffff;
+}
+
+.passwordToggle {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.passwordToggle:hover {
+  color: #64748b;
+}
+
+.formOptions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  color: #475569;
+}
+
+.checkbox {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #cbd5e1;
+  accent-color: var(--primary-green);
+  cursor: pointer;
+}
+
+.forgotPassword {
+  color: var(--primary-green);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.forgotPassword:hover {
+  color: var(--primary-green-dark);
+  text-decoration: underline;
+}
+
+/* Button & Alert state styling */
+.errorAlert {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #fef2f2;
+  border: 1px solid #fee2e2;
+  color: #dc2626;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  animation: shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.successAlert {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f0fdf4;
+  border: 1px solid #dcfce7;
+  color: #16a34a;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  background: linear-gradient(135deg, var(--primary-green-light) 0%, var(--primary-green) 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 0.625rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px var(--primary-green-glow-heavy);
+}
+
+.submitButton:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green-dark) 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px var(--primary-green-glow-heavy);
+}
+
+.submitButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submitButton:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: spin 0.8s linear infinite;
+}
+
+/* Animations */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shake {
+
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 900px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .formPanel {
+    background-color: #ffffff;
+    min-height: 100vh;
+  }
+
+  .formCard {
+    box-shadow: none;
+    border: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .formPanel {
+    padding: 2rem 1rem;
+  }
+
+  .oauthGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+/* Gmail Security Alert Notice */
+.gmailWarning {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: #fef3c7;
+  border: 1px solid #fde68a;
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+  color: #92400e;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.gmailWarningIcon {
+  flex-shrink: 0;
+  color: #d97706;
+}
+
+/* Modal Picker Overlay Backdrop */
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Google Account Modal Dialog */
+.modalCard {
+  background: #ffffff;
+  width: 90%;
+  max-width: 440px;
+  border-radius: 1.25rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modalHeader {
+  padding: 1.75rem;
+  text-align: center;
+  border-bottom: 1px solid #f1f5f9;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.googleBrandLogo {
+  width: 48px;
+  height: 48px;
+}
+
+.modalTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.modalSubtitle {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.accountsList {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 0.5rem;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.accountItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  text-align: left;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.accountItem:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+.accountItemActive {
+  background-color: var(--primary-green-glow);
+  border-color: var(--primary-green-light);
+}
+
+.avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-green-light) 0%, var(--primary-green-dark) 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px var(--primary-green-glow-heavy);
+}
+
+.accountDetails {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.accountName {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.roleBadge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+}
+
+.accountEmail {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 0.125rem;
+}
+
+.checkIcon {
+  color: var(--primary-green);
+}
+
+.modalFooter {
+  padding: 1.25rem;
+  background-color: #f8fafc;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.closeButton {
+  padding: 0.625rem 1.25rem;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.closeButton:hover {
+  background-color: #f1f5f9;
+  color: #1e293b;
+}
+
+.submitInputGoogle {
+  padding: 0.625rem 1.25rem;
+  background: linear-gradient(135deg, var(--primary-green-light) 0%, var(--primary-green) 100%);
+  border: none;
+  color: #ffffff;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px var(--primary-green-glow-heavy);
+  transition: all 0.15s ease;
+}
+
+.submitInputGoogle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px var(--primary-green-glow-heavy);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
