@@ -1,0 +1,5 @@
+DB-USER = nomor port server backend
+DB-HOST = host db
+DB-NAME = nama db
+DB-PASSWORD = password db
+DB-PORT = port db
