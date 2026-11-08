@@ -1,5 +1,15 @@
-DB-USER = nomor port server backend
+PORT = nomor port server backend
+CORS_ORIGIN = url api frontend
+DB-USER = user postgre
 DB-HOST = host db
 DB-NAME = nama db
 DB-PASSWORD = password db
-DB-PORT = port db
+DB-PORT = nomor port server backend
+DB-SSL = 
+JWT_SECRET =
+JWT_EXPIRES_IN = 
+ENCRYPTION_KEY =
+HMAC_KEY =
+SEED_USERNAME =
+SEED_PASSWORD =
+SEED_NAMA =
