@@ -5,28 +5,31 @@ types.setTypeParser(1082, (nilai) => nilai);
 
 const pool = new Pool({
     ...env.db.koneksi,
-    ssl: env.db.ssl ? {rejectUnauthorized: false} : false,
+    ssl: env.db.ssl ? { rejectUnauthorized: false } : false,
     max: 10,
     idleTimeoutMillis: 30000,
     connectionTimeoutMillis: 10000
 });
 
 pool.on('error', (err) => {
-    console.error(`Koneksi database bermasalah: ${err.massage}`);
+    console.error('Koneksi database bermasalah:', err.message);
 });
 
-const query = (text, params) => pool.query(text, params);
+const terinisialisasi = new WeakSet();
 
-const transaction = async (callback) => {
+const ambilKlien = async () => {
     const client = await pool.connect();
+    if(!terinisialisasi.has(client)){
+        await client.query('SET jit = off').catch(() => {});
+        terinisialisasi.add(client);
+    }
+    return client;
+};
+
+const query = async (text, params) => {
+    const client = await ambilKlien();
     try{
-        await client.query('BEGIN');
-        const hasil = await callback(client);
-        await client.query('COMMIT');
-        return hasil;
-    }catch(err){
-        await client.query('ROLLBACK');
-        throw err;
+        return await client.query(text, params);
     }finally{
         client.release();
     }
