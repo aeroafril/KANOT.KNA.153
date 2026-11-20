@@ -160,7 +160,7 @@ export default function DashboardPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">Halo, Khairun Nisa, S.H., M.Kn.</h1>
+        <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">Halo, User</h1>
         <p className="mt-1 text-sm text-slate-500">
           Berikut adalah ringkasan data buku tamu, kelengkapan berkas, dan aktivitas hari ini.
         </p>
