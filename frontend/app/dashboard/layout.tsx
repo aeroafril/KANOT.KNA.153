@@ -230,8 +230,8 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
                 KN
               </div>
               <div className="min-w-0">
-                <p className="truncate text-sm font-semibold">Khairun Nisa, S.H., M.Kn.</p>
-                <p className="truncate text-xs text-slate-500">Notaris Utama</p>
+                <p className="truncate text-sm font-semibold">User</p>
+                <p className="truncate text-xs text-slate-500">Jabatan</p>
               </div>
             </div>
             <Link
