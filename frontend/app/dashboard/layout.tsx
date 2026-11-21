@@ -99,7 +99,7 @@ const bookNav: NavItem[] = [
   { label: "Buku Daftar PT", href: `${BASE}/daftarpt`, icon: "book" },
   { label: "Buku Daftar Yayasan", href: `${BASE}/daftaryayasan`, icon: "book" },
   { label: "Buku Daftar Hibah", href: `${BASE}/daftarhibah`, icon: "book" },
-  { label: "Buku Daftar Pengangkatan Anak", href: `${BASE}/daftarank`, icon: "users" },
+  { label: "Buku Daftar Pengangkatan Anak", href: `${BASE}/daftaranak`, icon: "users" },
 ];
 
 const navClass = (active: boolean) =>
@@ -208,7 +208,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
                 </Link>
               ))}
 
-              <Link href={`${BASE}/tim`} onClick={closeSidebar} className={navClass(isActive(`${BASE}/tim`))}>
+              <Link href={`${BASE}/timkolaborasi`} onClick={closeSidebar} className={navClass(isActive(`${BASE}/tim`))}>
                 <Icon name="users" />
                 Tim Kolaborasi
               </Link>
